@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+
+  # databse section
+  basketdb:
+    image: redis:alpine
+    container_name: basketdb
+    restart: always
+    ports:
+      - "6379:6379"
+
+  # end database
+
+  # infrastructure section
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basket-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: /Basket.Api/Dockerfile
+
+# end infrastructure 

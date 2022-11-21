@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8CGGgbhZGHxEcSW+vWZmxmTtOG54YLOv/7viFn5ZaChA2MONf+7shH5Exq044guPfqv1DYrxXPDah4an2SUuhA==",
+  "success": true,
+  "projectFilePath": "/Users/nguyennghia/Personal/Microservice-Samples/src/Basket.Api/Basket.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/nguyennghia/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/nguyennghia/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/nguyennghia/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/nguyennghia/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/nguyennghia/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/nguyennghia/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
