@@ -3,20 +3,38 @@ version: '3.8'
 services:
 
   # databse section
-  basketdb:
+  sample.basketdb:
     image: redis:alpine
-    container_name: basketdb
+    container_name: sample.basketdb
     restart: always
     ports:
-      - "6379:6379"
+      - "6380:6380"
 
   # end database
 
   # infrastructure section
-  basket.api:
-    image: ${DOCKER_REGISTRY-}basket-api:${PLATFORM:-linux}-${TAG:-latest}
+  sample.basket.api:
+    image: ${DOCKER_REGISTRY-}sample-basket-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
-      dockerfile: /Basket.Api/Dockerfile
+      dockerfile: Basket.Api/Dockerfile
+    container_name: sample.basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    depends_on:
+      - sample.basketdb
+    ports:
+      - "6200:80"
+    restart: always
 
 # end infrastructure 
+
+
+# network 
+networks:
+  default:
+    name: microservice_sample
+    driver: bridge
+
+# end network
