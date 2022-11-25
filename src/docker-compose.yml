@@ -17,7 +17,7 @@ services:
     image: ${DOCKER_REGISTRY-}sample-basket-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
-      dockerfile: Basket.Api/Dockerfile
+      dockerfile: Services/Basket.Api/Dockerfile
     container_name: sample.basket.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

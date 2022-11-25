@@ -7,9 +7,9 @@
             "request": "launch",
             "preLaunchTask": "Build.Basket.Api",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/Basket.Api/bin/Debug/net6.0/Basket.Api.dll",
+            "program": "${workspaceFolder}/src/Services/Basket.Api/bin/Debug/net6.0/Basket.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Basket.Api",
+            "cwd": "${workspaceFolder}/src/Services/Basket.Api",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

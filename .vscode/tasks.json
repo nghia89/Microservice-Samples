@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/Basket.Api/Basket.Api.csproj",
+                "${workspaceFolder}/src/Services/Basket.Api/Basket.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

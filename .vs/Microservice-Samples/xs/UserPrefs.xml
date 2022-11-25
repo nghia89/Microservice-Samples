@@ -1,9 +1,28 @@
-﻿<Properties>
+﻿<Properties StartupConfiguration="{6B24A9A6-38F1-47F4-8C63-6A2FAE355265}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Services/Basket.Api/Repositories/BasketRepository.cs">
+    <Files>
+      <File FileName="src/Services/Basket.Api/Repositories/BasketRepository.cs" Line="12" Column="37" />
+      <File FileName="src/BuildingBlocks/Infrastructure/Common/Interfaces/ISerializeService.cs" Line="4" Column="35" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__" />
+        <State name="__root__">
+          <Node name="Microservice-Samples" expanded="True">
+            <Node name="BuildingBlocks" expanded="True">
+              <Node name="Infrastructure" expanded="True">
+                <Node name="Common" expanded="True">
+                  <Node name="Interfaces" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Basket.Api" expanded="True">
+              <Node name="Repositories" expanded="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
@@ -12,9 +31,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BuildingBlocks.Infrastructure FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.BuildingBlocks.Shared FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Basket.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
