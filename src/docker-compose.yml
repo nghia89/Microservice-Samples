@@ -8,8 +8,19 @@ services:
     container_name: sample.basketdb
     restart: always
     ports:
-      - "6380:6380"
+      - "6379:6379"
 
+  #productdb: mysql
+  productdb:
+    image: mysql:8.0.29
+    container_name: productdb
+    environment:
+      MYSQL_ROOT_PASSWORD: "Passw0rd!"
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
   # end database
 
   # infrastructure section
@@ -38,3 +49,9 @@ networks:
     driver: bridge
 
 # end network
+
+
+#volumes section
+volumes:
+  mysql_data:
+    name: mysql_data

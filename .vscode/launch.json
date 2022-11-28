@@ -22,13 +22,36 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             }
+        },
+        {
+            "name": "Product.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build.Product.Api",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/src/Services/Product.Api/bin/Debug/net6.0/Product.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Services/Product.Api",
+            "stopAtEntry": false,
+            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
         }
     ],
     "compounds": [
         {
             "name": "Multiline Api",
             "configurations": [
-                "Basket.API"
+                "Basket.Api",
+                "Product.Api"
             ]
         }
     ]
