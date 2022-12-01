@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Api", "src\Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\BuildingBlocks\Domain\Domain.csproj", "{C04E0944-BC3E-41C1-A523-523AB5BCA3FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer", "src\Services\KafkaConsumer\KafkaConsumer.csproj", "{1954AC5E-D56C-4C13-A4C0-0C7CF367ECDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{C04E0944-BC3E-41C1-A523-523AB5BCA3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04E0944-BC3E-41C1-A523-523AB5BCA3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04E0944-BC3E-41C1-A523-523AB5BCA3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1954AC5E-D56C-4C13-A4C0-0C7CF367ECDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1954AC5E-D56C-4C13-A4C0-0C7CF367ECDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1954AC5E-D56C-4C13-A4C0-0C7CF367ECDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1954AC5E-D56C-4C13-A4C0-0C7CF367ECDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FCE9CA1-75E5-4A22-B5D6-704BA5FC92AA} = {5C8CCA11-AF9D-4FB8-AF49-990FB75E3E58}

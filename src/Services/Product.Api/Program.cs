@@ -1,4 +1,5 @@
-﻿using Domain.Common.Interfaces;
+﻿
+using Domain.Common.Interfaces;
 using Infrastructure.Common;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
@@ -10,7 +11,6 @@ using Product.API.Persistence;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile(new MappingProfile()));
@@ -30,8 +30,11 @@ builder.Services.AddDbContext<ProductContext>(m => m.UseMySql(msBuilder.Connecti
         e.MigrationsAssembly("Product.Api");
         e.SchemaBehavior(MySqlSchemaBehavior.Ignore);
     }));
+//builder.Services.AddSingleton<IHostedService, KafkaConsumerHandler>();
+
 builder.Services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
