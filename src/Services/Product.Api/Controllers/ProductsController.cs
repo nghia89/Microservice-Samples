@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Nest;
 using Product.Api.Repository;
 using Product.API.Entities;
 using Shared.DTOs.Product;
@@ -13,15 +14,36 @@ public class ProductsController : ControllerBase
     private readonly IProductRepository _productRepo;
     private readonly ILogger<ProductsController> _logger;
     private readonly IMapper _mapper;
+    private readonly IElasticClient _elasticClient;
     public ProductsController(ILogger<ProductsController> logger,
      IProductRepository productRepo,
-     IMapper mapper)
+     IMapper mapper,
+     IElasticClient elasticClient)
     {
         _logger = logger;
         _productRepo = productRepo;
         _mapper = mapper;
+        _elasticClient = elasticClient;
     }
 
+    [Route("/search")]
+    [HttpGet]
+    public async Task<IActionResult> Find(string? query, int page = 1, int pageSize = 5)
+    {
+        var response = await _elasticClient.SearchAsync<CreateProductDto>(
+            s => s.Query(q => q.QueryString(d => d.Query(query)))
+                .From((page - 1) * pageSize)
+                .Size(pageSize));
+
+        if (!response.IsValid)
+        {
+
+            _logger.LogError("Failed to search documents");
+            return Ok();
+        }
+
+        return Ok(response.Documents);
+    }
     #region CRUD
     [HttpGet]
     public async Task<IActionResult> GetProducts()

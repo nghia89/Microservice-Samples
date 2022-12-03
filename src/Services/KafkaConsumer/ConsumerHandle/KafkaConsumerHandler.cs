@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 using Confluent.Kafka;
+using KafkaConsumer.Services;
 using Nest;
 using Shared.DTOs.Product;
 
@@ -9,12 +10,14 @@ namespace KafkaConsumer
     public class KafkaConsumerHandler : IHostedService
     {
         private readonly IElasticClient _elasticClient;
+        private readonly IProductService _productService;
         private readonly string topic = "product";
         public KafkaConsumerHandler(
-                       IElasticClient elasticClient
-                       )
+                       IElasticClient elasticClient,
+                       IProductService productService)
         {
             _elasticClient = elasticClient;
+            _productService = productService;
         }
         public async Task StartAsync(CancellationToken cancellationToken)
         {
@@ -37,15 +40,8 @@ namespace KafkaConsumer
                         var value = consumer.Message.Value;
                         var product = JsonSerializer.Deserialize<CreateProductDto>(value);
 
-                        // Index product dto
-                        await _elasticClient.IndexDocumentAsync(product);
-                        var result = await _elasticClient.SearchAsync<CreateProductDto>(
-                       s => s.Query(
-                           q => q.QueryString(
-                               d => d.Query('*' + "string" + '*')
-                           )).Size(5000));
-
-                        Console.WriteLine("ProductsController Get - ", DateTime.UtcNow);
+                        if (product != null)
+                            await _productService.SaveSingleAsync(product);
                         Console.WriteLine($"Message: {consumer.Message.Value} received from {consumer.Topic} - {consumer.Partition.Value}- {consumer.Offset}");
                     }
                 }

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Product.Api;
+using Product.Api.Extensions;
 using Product.Api.Repository;
 using Product.API.Persistence;
 
@@ -34,7 +35,7 @@ builder.Services.AddDbContext<ProductContext>(m => m.UseMySql(msBuilder.Connecti
 
 builder.Services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
+builder.Services.AddElasticsearch(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

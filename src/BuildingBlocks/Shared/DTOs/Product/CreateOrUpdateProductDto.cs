@@ -9,6 +9,7 @@ namespace Shared.DTOs.Product
 {
     public abstract class CreateOrUpdateProductDto
     {
+        public long Id { get; set; }
         [Required]
         [MaxLength(250, ErrorMessage = "Maximum length for Product Name is 250 characters.")]
         public string Name { get; set; }
