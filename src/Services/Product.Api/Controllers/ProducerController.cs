@@ -23,10 +23,15 @@ namespace ApacheKafkaProducerDemo.Controllers
         Post([FromBody] CreateProductDto orderRequest)
         {
             string message = JsonSerializer.Serialize(orderRequest);
+            for (int i = 0; i < 200; i++)
+            {
+                await SendOrderRequest(topic, message);
+            }
+
+            //await SendOrderRequest("product01", message);
             return Ok(await SendOrderRequest(topic, message));
         }
-        private async Task<bool> SendOrderRequest
-        (string topic, string message)
+        private async Task<bool> SendOrderRequest(string topic, string message)
         {
             ProducerConfig config = new ProducerConfig
             {
@@ -43,7 +48,7 @@ namespace ApacheKafkaProducerDemo.Controllers
                         Value = message
                     });
 
-                    Debug.WriteLine($"Delivery Timestamp:{result.Timestamp.UtcDateTime}");
+                    Debug.WriteLine($"Delivery Timestamp:{result.Timestamp.UtcDateTime} _ Offset: {result.Offset}");
                     return await Task.FromResult(true);
                 }
             }

@@ -4,17 +4,16 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/nguyennghia/Personal/Microservice-Samples/src/Services/Product.Api/Kafka/KafkaConsumerHandler.cs" relfile="src/Services/Product.Api/Kafka/KafkaConsumerHandler.cs" line="32" column="1" />
-      <Breakpoint file="/Users/nguyennghia/Personal/Microservice-Samples/src/Services/KafkaConsumer/KafkaConsumerHandler.cs" relfile="src/Services/KafkaConsumer/KafkaConsumerHandler.cs" line="27" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.KafkaConsumer PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Basket.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/Services/KafkaConsumer/KafkaConsumerHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Services/KafkaConsumer/ConsumerHandle/KafkaConsumerHandler.cs">
     <Files>
-      <File FileName="src/Services/KafkaConsumer/Extensions/ElasticSearchExtensions.cs" Line="16" Column="1" />
-      <File FileName="src/Services/KafkaConsumer/KafkaConsumerHandler.cs" Line="30" Column="36" />
-      <File FileName="src/Services/Product.Api/Controllers/ProducerController.cs" Line="19" Column="49" />
-      <File FileName="src/Services/Product.Api/Controllers/ProductsController.cs" Line="1" Column="1" />
+      <File FileName="src/Services/KafkaConsumer/Extensions/ElasticSearchExtensions.cs" />
+      <File FileName="src/Services/KafkaConsumer/KafkaConsumerHandler.cs" Line="49" Column="94" />
+      <File FileName="src/Services/Product.Api/Controllers/ProducerController.cs" />
+      <File FileName="src/Services/Product.Api/Controllers/ProductsController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,12 +23,7 @@
             <Node name="KafkaConsumer" expanded="True">
               <Node name="Extensions" expanded="True" />
             </Node>
-            <Node name="Product.Api" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="ProducerController.cs" selected="True" />
-              </Node>
-              <Node name="Kafka" expanded="True" />
-            </Node>
+            <Node name="Product.Api" expanded="True" />
           </Node>
         </State>
       </Pad>

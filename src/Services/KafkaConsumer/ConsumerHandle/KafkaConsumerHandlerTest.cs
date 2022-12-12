@@ -7,14 +7,14 @@ using Shared.DTOs.Product;
 
 namespace KafkaConsumer
 {
-    public class KafkaConsumerHandler : IHostedService
+    public class KafkaConsumerHandlerTest : IHostedService
     {
         private readonly IElasticClient _elasticClient;
         private readonly IProductService _productService;
-        private readonly string _topic = "product";
+        private readonly string _topic = "product01";
         private readonly IConsumer<Ignore, string> _consumer;
         private ConsumerConfig _config;
-        public KafkaConsumerHandler(
+        public KafkaConsumerHandlerTest(
                        IElasticClient elasticClient,
                        IProductService productService,
                        ConsumerConfig config)
@@ -38,7 +38,7 @@ namespace KafkaConsumer
                 {
                     Console.WriteLine("Consumindo novas mensagens...");
                     var consumeResult = _consumer.Consume(cancellationToken);
-
+                    throw new InvalidOperationException();
                     _consumer.Commit();
                     Console.WriteLine(
                         $"Consumed message '{consumeResult.Value}' at: '{consumeResult.TopicPartitionOffset}'.");
